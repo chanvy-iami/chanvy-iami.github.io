@@ -4,7 +4,7 @@ https://chanvy-iami.github.io
 
 ## 致谢
 
-1. 模板来自 [BY](https://github.com/qiubaiying/qiubaiying.github.io) fork 的, 感谢作者。 
+1. 模板是从 [BY](https://github.com/qiubaiying/qiubaiying.github.io) fork 的, 感谢作者。 
 2. 感谢 Jekyll、Github Pages!
 
 ## License
