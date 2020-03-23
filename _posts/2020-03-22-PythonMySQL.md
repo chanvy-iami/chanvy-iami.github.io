@@ -156,7 +156,7 @@ for x in myresult:
 mydb = mysql.connector.connect(
 	host='localhost',				
 	user='root',
-	passwd='新密码'
+	passwd='新密码',
     buffered=True
 )
 mycursor = mydb.cursor(buffered = True)
