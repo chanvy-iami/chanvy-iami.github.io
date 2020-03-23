@@ -28,17 +28,15 @@ tags:
 
 ## 创建数据库连接 
 
-`import mysql.connector`
-
 ```
+import mysql.connector
 mydb = mysql.connector.connect(
-	host='localhost',				
-	user='root',
-	passwd='新密码'
+    host='localhost',				
+    user='root',
+    passwd='新密码'
 )
+print(mydb)
 ```
-
-`print(mydb)`
 
 ### 创建数据库
 
@@ -66,7 +64,7 @@ mycursor.execute("CREATE DATABASE chenwei_db")
 ```
 mycursor.execute("SHOW TABLES")
 for x in mycursor:
-	print(x)
+  print(x)
 ```
 
 ### 主键设置
@@ -102,7 +100,7 @@ print(mycursor.rowcount, "记录插入成功。")
 ```
 sql = "INSERT INTO sites (name, url) VALUES (%s, %s)"
 val = [("taobao", "http://taobao.com"),
-	("baidu","http://baidu.com")
+	   ("baidu","http://baidu.com")
 ]
 mycursor.execute(sql, val)
 mydb.commit() # 数据表有更新，必须使用该语句
@@ -117,7 +115,7 @@ print(mycursor.rowcount, "记录插入成功。")
 mycursor.execute("SELECT * FROM sites")
 myresult = mycursor.fetchall() # 获取所有记录
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 获取指定的字段数据。
@@ -126,7 +124,7 @@ for x in myresult:
 mycursor.execute("SELECT name FROM sites")
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 只想获取一条数据。
@@ -135,7 +133,7 @@ for x in myresult:
 mycursor.execute("SELECT * FROM sites")
 myresult = mycursor.fetchone()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 ### where条件语句
@@ -147,7 +145,7 @@ sql = "SELECT * FROM sites WHERE name ='taobao'"
 mycursor.execute(sql)
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 **注**：在此阶段执行代码过程中，会出现错误。经过求助发现问题，查询时，MySQLCursorBuffered游标会从服务器获取整个结果集并将其放入缓冲区。Buffered游标适用于多个小结果集的查询，且多个结果集之间的数据需一起使用。buffered游标执行查询语句时，取行方法返回缓冲区的行；而nonbuffered游标不从服务器获取数据，直到调用获取数据行的方法，nonbuffered游标必须确保取出的结果是结果集中的所有行，才可以执行其他语句，否则报错mysql.connector.errors.InternalError: Unread result found。
@@ -173,7 +171,7 @@ sql = "SELECT * FROM sites WHERE name ='taobao'"
 mycursor.execute(sql)
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 使用通配符%。
@@ -183,7 +181,7 @@ sql = "SELECT * FROM sites WHERE name LIKE '%bai%'"
 mycursor.execute(sql)
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 为防止数据库查询发生SQL注入的攻击，使用%s占位符来转义查询语句条件。
@@ -194,7 +192,7 @@ na = ("taobao",)
 mycursor.execute(sql, na)
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 ### 排序
@@ -205,14 +203,14 @@ for x in myresult:
 sql = "SELECT * FROM sites ORDER BY name"
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 ```
 sql = "SELECT * FROM sites ORDER BY name DESC"
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 ### LIMIT 
@@ -223,7 +221,7 @@ for x in myresult:
 mycursor.execute("SELECT * FROM sites LIMIT 2")
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 指定起始位置，使用关键字OFFSET。
@@ -232,7 +230,7 @@ for x in myresult:
 mycursor.execute("SELECT * FROM sites LIMIT 2 OFFSET 1")
 myresult = mycursor.fetchall()
 for x in myresult:
-	print(x)
+  print(x)
 ```
 
 ## 删除记录

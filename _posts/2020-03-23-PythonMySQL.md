@@ -39,7 +39,7 @@ db.close() # 关闭数据库连接
 
 ```
 cursor.execute("DROP TABLE IF EXISTS employee")
-sql = "CREATE TABLE employee (fn CHAR(20), ln CHAR(20), 		age INT, sex CHAR(1), income FLOAT)"
+sql = "CREATE TABLE employee (fn CHAR(20), ln CHAR(20), age INT, sex CHAR(1), income FLOAT)"
 cursor.execute(sql)
 db.close()
 ```
@@ -47,25 +47,22 @@ db.close()
 ## 数据库插入操作
 
 ```
-sql = "INSERT INTO employee(fn, ln, age, sex, income)
-		VALUES ('wei', 'chen', 25, 'M', 2500)"
+sql = "INSERT INTO employee(fn, ln, age, sex, income） VALUES ('wei', 'chen', 25, 'M', 2500)"
 try:
-	cursor.execute(sql)
-	db.commit()
+    cursor.execute(sql)
+    db.commit()
 except:
-	db.rollback()
+    db.rollback()
 db.close()
 ```
 
 ```
-sql = "INSERT INTO employee(fn, ln, age, sex, income)
-		VALUES ('%s', '%s', '%s', '%s', '%s')"
-		('w', 'c', 26, 'M', 2505)
+sql = "INSERT INTO employee(fn, ln, age, sex, income） VALUES ('%s', '%s', '%s', '%s', '%s')" %('w', 'c', 26, 'M', 2505)
 try:
-	cursor.execute(sql)
-	db.commit()
+    cursor.execute(sql)
+    db.commit()
 except:
-	db.rollback()
+    db.rollback()
 db.close()
 ```
 
@@ -94,8 +91,7 @@ except:
 ## 数据库更新操作
 
 ```
-sql = "UPDATE employee SET age = age+1 
-		WHERE sex = '%c'" %('M')
+sql = "UPDATE employee SET age = age+1 WHERE sex = '%c'" %('M')
 try:
 	cursor.execute(sql)
  	db.commit()
