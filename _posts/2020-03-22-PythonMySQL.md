@@ -99,9 +99,7 @@ print(mycursor.rowcount, "记录插入成功。")
 
 ```
 sql = "INSERT INTO sites (name, url) VALUES (%s, %s)"
-val = [("taobao", "http://taobao.com"),
-	   ("baidu","http://baidu.com")
-]
+val = [("taobao", "http://taobao.com"), ("baidu","http://baidu.com")]
 mycursor.execute(sql, val)
 mydb.commit() # 数据表有更新，必须使用该语句
 print(mycursor.rowcount, "记录插入成功。")
@@ -154,9 +152,9 @@ for x in myresult:
 
 ```
 mydb = mysql.connector.connect(
-	host='localhost',				
-	user='root',
-	passwd='新密码',
+    host='localhost',
+    user='root',
+    passwd='新密码',
     buffered=True
 )
 mycursor = mydb.cursor(buffered = True)

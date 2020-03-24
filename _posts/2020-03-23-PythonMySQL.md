@@ -4,7 +4,7 @@ title: Python MySQL
 subtitle: PyMySQL驱动
 date: 2020-03-23
 aythor: Weiami
-head-img: img/post-bg-2015.jpg
+header-img: img/post-bg-2015.jpg
 catalog: true
 tags:
     - python
@@ -75,17 +75,17 @@ db.close()
 ```
 sql = "SELECT * FROM employee WHERE income > %s" %(2500)
 try:
-	cursor.execute(sql)
-	results = cursor.fetchall()
-	for row in results:
-		f = row[0]
-		l = row[1]
-		a = row[2]
-		s = row[3]
-		i = row[4]
-		print(f, l, a, s, i)
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    for row in results:
+	  f = row[0]
+	  l = row[1]
+	  a = row[2]
+	  s = row[3]
+	  i = row[4]
+	  print(f, l, a, s, i)
 except:
-	print("Error: unable to fetch data")
+    print("Error: unable to fetch data")
 ```
 
 ## 数据库更新操作
@@ -93,10 +93,10 @@ except:
 ```
 sql = "UPDATE employee SET age = age+1 WHERE sex = '%c'" %('M')
 try:
-	cursor.execute(sql)
- 	db.commit()
+    cursor.execute(sql)
+    db.commit()
 except:
-	db.rollback()
+    db.rollback()
 db.close()
 ```
 
@@ -105,10 +105,10 @@ db.close()
 ```
 sql = "DELETE FROM employee WHERE age > %s" % (20)
 try:
-	cursor.execute(sql)
- 	db.commit()
+    cursor.execute(sql)
+    db.commit()
 except:
-	db.rollback()
+    db.rollback()
 db.close()
 ```
 
