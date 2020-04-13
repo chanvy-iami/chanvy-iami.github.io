@@ -4,7 +4,7 @@ title: Python MySQL
 subtitle: mysql connector 驱动
 date: 2020-03-22
 author: Weiami
-header-img: img/post-bg-2015.jpg
+header-img: img/post-bg-2017.jpg
 catalog: true
 tags:
     - python

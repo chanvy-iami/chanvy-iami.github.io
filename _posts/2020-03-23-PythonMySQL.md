@@ -3,8 +3,8 @@ layout: post
 title: Python MySQL
 subtitle: PyMySQL驱动
 date: 2020-03-23
-aythor: Weiami
-header-img: img/post-bg-2015.jpg
+author: Weiami
+header-img: img/post-bg-2017.jpg
 catalog: true
 tags:
     - python

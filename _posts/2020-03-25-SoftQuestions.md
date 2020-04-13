@@ -5,7 +5,7 @@ subtitle: mathtype6.9b
 date: 2020-03-25
 author: Weiami
 header-img: img/post-bg-2016.jpg
-catalog: true
+catalog: false
 tags:
     - mathtype
 ---
