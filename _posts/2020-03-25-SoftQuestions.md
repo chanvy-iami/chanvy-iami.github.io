@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Soft Questions
+title: Soft
 subtitle: mathtype6.9b
 date: 2020-03-25
 author: Weiami
